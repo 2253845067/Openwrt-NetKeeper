@@ -31,11 +31,11 @@ sh nk4conf.sh
 ```
 ### （二）电脑端
 
-1.网线接路由器lan口
+1.电脑连接路由器，有线或无线都可以。
 
 2.netkeeper输入账号密码拨号，会提示691错误，关闭netkeeper。
 
-3.这个时候路由器会截取真实账号，并进行拨号。
+3.这个时候路由器会截取真实账号，并进行拨号。电脑测试有没有网，如果没有重复第二步。
 
 ## 二、个人测试环境：
 路由器：
@@ -49,15 +49,8 @@ hg255d/hc5661a PandoraBox固件 {Base on OpenWrt BARRIER BREAKER (14.09, r865)}
 地点：CQUPT
 
 ## 三、问题
-### （一）如果账号里出现双引号"，会获取失败。希望有人能解决。
-log格式
-```
-rcvd [PAP AuthReq id=0xf user="username" password="passwd"]
-```
-我的处理方法：
-```sh
-username=$(grep 'user=' /tmp/pppoe.log | grep 'rcvd' | tail -n 1 | cut -d \" -f 2)
-```
+### ~~（一）如果账号里出现双引号"，会获取失败。希望有人能解决。~~
+已解决，感谢[@gmfghp](https://github.com/gmfghp)提供的代码。
 
 ## 四、ipk下载
 可以在路由器里运行
