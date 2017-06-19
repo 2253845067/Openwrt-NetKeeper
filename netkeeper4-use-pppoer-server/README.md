@@ -49,8 +49,17 @@ hg255d/hc5661a PandoraBox固件 {Base on OpenWrt BARRIER BREAKER (14.09, r865)}
 地点：CQUPT
 
 ## 三、问题
-### ~~（一）如果账号里出现双引号"，会获取失败。希望有人能解决。~~
-已解决，感谢[@gmfghp](https://github.com/gmfghp)提供的代码。
+### （一）如果账号里出现双引号"，会获取失败。希望有人能解决。
+
+实际账号：^M1\W"4X 7e1*********0@cxxxx  
+pppoe日志：  
+rcvd [PAP AuthReq id=0x5 user="\r1\\W\"4X 7e1*********0@cxxxx" password="password"]  
+最后拨号的账号：  
+sent [PAP AuthReq id=0x1 user="\r1\\W\\\"4X 7e1*********0@cxxxx" password="password"]  
+
+```
+把"转义的\"解释成\\\"了,这样拨出去的账号就多了个\
+```
 
 ## 四、ipk下载
 可以在路由器里运行
